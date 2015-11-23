@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{padding:0; margin:0;}
+	@-moz-keyframes test{
+		from {-moz-transform:translateX(0px);}
+		to {-moz-transform:translateX(-600px);}
+	}
+	#main{width:600px; height:30px; border:1px solid #000; margin:100px auto; overflow:hidden; border-radius:20px;}
+	#div1{width:1200px; height:30px; background:-moz-repeating-linear-gradient(-30deg,red 0px,red 10px,green 10px,green 20px);}
+	#div1:hover{-moz-animation-play-state:paused;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv1=document.getElementById('div1');
+	var left=0;
+	setInterval(function(){
+		left-=2;
+		if(left<=-600){
+			left=0;
+		}
+		oDiv1.style.MozTransform='translateX('+left+'px)';
+	},30)
+};
+</script>
+</head>
+
+<body>
+	<div id="main">
+    	<div id="div1"></div>
+    </div>
+</body>
+</html>
